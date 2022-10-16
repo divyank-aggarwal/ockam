@@ -1,5 +1,6 @@
 use minicbor::{Decode, Encode};
 use ockam_core::compat::borrow::Cow;
+use serde::Serialize;
 
 use ockam_core::CowBytes;
 
@@ -26,7 +27,7 @@ impl<'a> CreateIdentityResponse<'a> {
     }
 }
 
-#[derive(Debug, Clone, Decode, Encode)]
+#[derive(Debug, Clone, Decode, Encode,Serialize)]
 #[rustfmt::skip]
 #[cbor(map)]
 pub struct LongIdentityResponse<'a> {
@@ -45,7 +46,7 @@ impl<'a> LongIdentityResponse<'a> {
     }
 }
 
-#[derive(Debug, Clone, Decode, Encode)]
+#[derive(Debug, Clone, Decode, Encode,Serialize)]
 #[rustfmt::skip]
 #[cbor(map)]
 pub struct ShortIdentityResponse<'a> {
